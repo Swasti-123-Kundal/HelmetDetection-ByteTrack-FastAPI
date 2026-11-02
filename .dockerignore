@@ -1,0 +1,11 @@
+.git
+__pycache__
+*.pyc
+.venv
+runs
+datasets
+outputs
+results
+notebooks
+docs
+tests

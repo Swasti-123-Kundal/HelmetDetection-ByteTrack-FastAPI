@@ -1,0 +1,15 @@
+# Central settings used by tracking + API.
+# Class names must match the names in your dataset data.yaml (lowercase, snake_case).
+violation_classes: [without_helmet, no_helmet, no_helmet_rider, head]
+safe_classes: [with_helmet, helmet]
+
+conf: 0.35            # detection confidence threshold
+iou: 0.5              # NMS IoU threshold
+imgsz: 640            # inference size (must match the ONNX export size)
+tracker: bytetrack.yaml   # or botsort.yaml
+
+# A track ID is confirmed as a violation only after it is seen
+# without a helmet in at least min_violation_frames frames.
+# This stops one-frame flickers from being counted as violations.
+min_violation_frames: 5
+smoothing_window: 15  # frames used for majority-vote label smoothing
