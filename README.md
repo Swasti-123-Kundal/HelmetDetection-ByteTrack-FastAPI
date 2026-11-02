@@ -40,8 +40,7 @@ Per class on the test split:
 
 The violation class (`without_helmet`) is the weaker one, which is why track-level voting is used to filter single-frame false alarms.
 
-![Training curves](results/results.png)
-![Confusion matrix](results/confusion_matrix.png)
+
 
 ### CPU latency vs accuracy (PyTorch vs ONNX Runtime)
 
@@ -56,7 +55,7 @@ Measured on a Colab Intel Xeon CPU @ 2.00GHz, one image per call, 100 timed runs
 | pytorch | 640 | 0.790 | 0.454 | 234.0 | 4.3 |
 | onnx | 640 | 0.787 | 0.456 | 301.4 | 3.3 |
 
-![Latency vs accuracy](results/tradeoff.png)
+
 
 **Findings**
 - Reducing the input size from 640 to 416 cut mean latency by about 2.1x (234 ms to 111 ms) for a 3.2-point drop in mAP@0.5:0.95. 416 is the best trade-off here; 320 is faster but loses 8.6 points.
